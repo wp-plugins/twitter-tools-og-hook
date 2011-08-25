@@ -23,7 +23,7 @@ Twitter Tools OG Hook is a plugin that works with Twitter Tools and allows you t
 2. Put the 'twitter-tools-og-hook' directory into your wp-content/plugins/ directory.
 3. Go to the Plugins page in your WordPress Administration area and click 'Activate' for Twitter Tools - Open Graph Hook
 4. Follow the instructions [here](http://developers.facebook.com/docs/opengraph/) to turn your page into Facebook open graph objects. Make sure you associate your page with a Facebook application using the "fb:app_id" meta tag.
-5. Obtain the page url, app ID and app secret of your page. Go to the Twitter Tools Options page (Settings > Twitter Tools) to set up your Twitter Tools Open Graph Hook by filling those information.
+5. Obtain the page url, facebook app ID and facebook app secret of your page. Go to the Twitter Tools Options page (Settings > Twitter Tools) to set up your Twitter Tools Open Graph Hook by filling those information.
 
 == Frequently Asked Questions ==
 
