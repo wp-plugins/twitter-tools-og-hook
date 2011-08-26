@@ -29,7 +29,8 @@ Twitter Tools OG Hook is a plugin that works with Twitter Tools and allows you t
 
 = It's not working! =
 
-Did you make sure to fill in your page URL, facebook app ID and secret on Twitter Tools plugin's settings page on Open Graph Hook section?
+* Did you install [Twitter Tools](http://wordpress.org/extend/plugins/twitter-tools/) first?
+* Did you make sure to fill in your page URL, facebook app ID and secret on Twitter Tools plugin's settings page on Open Graph Hook section?
 
 == Changelog ==
 
