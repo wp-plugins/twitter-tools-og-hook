@@ -70,13 +70,29 @@ function aktt_og_do_blog_post_og($post_id = 0) {
 	$access_token_url = "https://graph.facebook.com/oauth/access_token"; 
 	$parameters = "grant_type=client_credentials&client_id=" . $facebook_app_id .
 		"&client_secret=" . $facebook_secret;
-	$access_token = file_get_contents($access_token_url ."?".$parameters);
+	//$access_token = file_get_contents($access_token_url ."?".$parameters);
+        $ch1 = curl_init();
+        $timeout = 5; // set to zero for no timeout
+        curl_setopt ($ch1, CURLOPT_URL, $access_token_url."?".$parameters);
+        curl_setopt ($ch1, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt ($ch1, CURLOPT_CONNECTTIMEOUT, $timeout);
+        curl_setopt ($ch1, CURLOPT_SSL_VERIFYPEER, FALSE);
+        $access_token = curl_exec($ch1);
+        curl_close($ch1);
 
 	$apprequest_url = "https://graph.facebook.com/feed";
 	$parameters = "?" . $access_token . "&message=" .
 		urlencode($mymessage) . "&id=" . $ogurl . "&method=post";
 	$myurl = $apprequest_url . $parameters;
-        $result = file_get_contents($myurl);
+        //$result = file_get_contents($myurl);
+        $ch2 = curl_init();
+        $timeout = 5; // set to zero for no timeout
+        curl_setopt ($ch2, CURLOPT_URL, $myurl);
+        curl_setopt ($ch2, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt ($ch2, CURLOPT_CONNECTTIMEOUT, $timeout);
+        curl_setopt ($ch2, CURLOPT_SSL_VERIFYPEER, FALSE);
+        $result = curl_exec($ch2);
+        curl_close($ch2);
 
 	add_post_meta($post_id, 'aktt_oged', '1', true); 
 }
